@@ -2,7 +2,7 @@
     <header class="header">
         <!-- 导航栏 -->
         <nav class="nav">
-            <a href="">
+            <a href="/">
                 <img class="nav-img" src="../assets/logo.png" />
             </a>
             <a class="nav-item" href="">编程</a>
