@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style  scoped>
+/* 关于容器-卡片 */
 #about {
     background-color: #fff;
     border-radius: 10px;
@@ -39,6 +40,7 @@ export default {
     transition: all 0.2s ease-out 0s;
 }
 
+/* 自我描述 */
 .intro {
     align-items: flex-end;
     border-bottom: #d3d3d3 solid 1px;
@@ -55,6 +57,7 @@ export default {
     font-family: 'Source Han Serif';
 }
 
+/* 自我介绍 */
 .skill {
     align-items: center;
     display: flex;

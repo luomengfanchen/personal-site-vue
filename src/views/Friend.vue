@@ -19,12 +19,14 @@ export default {
 </script>
 
 <style scoped>
+/* 友链容器 */
 #friend {
     margin: 0px auto;
     width: 700px;
     margin-top: 100px;
 }
 
+/* 友链卡片 */
 .friend-card {
     align-items: center;
     border-radius: 10px;
@@ -39,6 +41,7 @@ export default {
     transition: all 0.2s ease-out 0s;
 }
 
+/* 友链头像 */
 .friend-avator {
     border-right: #d3d3d3 solid 1px;
     padding-right: 10px;
@@ -50,6 +53,7 @@ export default {
     width: 75px;
 }
 
+/* 友链描述 */
 .friend-descript {
     margin-left: 20px;
 }
