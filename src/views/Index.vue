@@ -74,7 +74,7 @@ export default {
 .content-card {
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0px 1px 3px 0px #d3d3d3;
+    box-shadow: 0px 1px 10px 0px #d3d3d3;
     display: flex;
     flex-direction: column;
     margin-top: 50px;
@@ -82,7 +82,8 @@ export default {
     width: 700px;
 }
 .content-card:hover {
-    box-shadow: 0px 1px 5px 0px #d3d3d3;
+    box-shadow: 0px 1px 20px 0px #d3d3d3;
+    transition: all 0.2s ease-out 0s;
 }
 
 /* 内容标题 */

@@ -40,6 +40,10 @@ export default {
     margin-top: 100px;
     width: 700px;
 }
+#about:hover {
+    box-shadow: 0px 0px 20px 0px #d3d3d3;
+    transition: all 0.2s ease-out 0s;
+}
 
 .intro {
     align-items: flex-end;

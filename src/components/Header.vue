@@ -8,7 +8,7 @@
             <a class="nav-item" href="">编程</a>
             <a class="nav-item" href="">动漫</a>
             <a class="nav-item" href="">游戏</a>
-            <a class="nav-item" href="">友链</a>
+            <a class="nav-item" href="/friend">友链</a>
             <a class="nav-item" href="/about">关于我</a>
         </nav>
 

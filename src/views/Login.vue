@@ -80,7 +80,7 @@ export default {
 }
 .login-input > input:focus {
     border: #4169e1 solid 1px;
-    transition: all 0.4s ease 0s;
+    transition: all 0.2s ease 0s;
 }
 
 /* 登陆按钮 */
@@ -97,6 +97,6 @@ export default {
 }
 .login-button > input:hover {
     background-color: #708de6;
-    transition: all 0.4s ease 0s;
+    transition: all 0.2s ease 0s;
 }
 </style>
