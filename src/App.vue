@@ -13,3 +13,11 @@ export default {
     components: { Header },
 }
 </script>
+
+<style>
+/* 预处理 */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+</style>

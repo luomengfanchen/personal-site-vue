@@ -19,12 +19,6 @@ export default {
 </script>
 
 <style scoped>
-/* 预处理 */
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
 #friend {
     margin: 0px auto;
     width: 700px;

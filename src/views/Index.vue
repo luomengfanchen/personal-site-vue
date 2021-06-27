@@ -56,12 +56,6 @@ export default {
 </script>
 
 <style scoped>
-/* 预处理 */
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
 /* 内容容器 */
 .content {
     align-items: center;

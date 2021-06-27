@@ -23,12 +23,6 @@ export default {
 </script>
 
 <style  scoped>
-/* 预处理 */
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
 #about {
     background-color: #fff;
     border-radius: 10px;

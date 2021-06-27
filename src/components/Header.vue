@@ -25,13 +25,7 @@ export default {
 }
 </script>
 
-<style>
-/* 预处理 */
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
+<style scoped>
 /* 头部样式 */
 .header {
     align-items: center;

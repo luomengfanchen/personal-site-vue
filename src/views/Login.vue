@@ -29,12 +29,6 @@ export default {
 </script>
 
 <style scoped>
-/* 预处理 */
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
 /* 登陆容器 */
 .login {
     align-items: center;
