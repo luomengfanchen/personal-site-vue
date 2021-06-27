@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* 预处理 */
 * {
     padding: 0px;

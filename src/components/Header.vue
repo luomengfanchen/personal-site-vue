@@ -9,7 +9,7 @@
             <a class="nav-item" href="">动漫</a>
             <a class="nav-item" href="">游戏</a>
             <a class="nav-item" href="">友链</a>
-            <a class="nav-item" href="">关于我</a>
+            <a class="nav-item" href="/about">关于我</a>
         </nav>
 
         <!-- 用户操作 -->
