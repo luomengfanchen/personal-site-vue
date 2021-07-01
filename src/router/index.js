@@ -16,6 +16,21 @@ const routes = [
         component: () => import('../views/Login.vue')
     },
     {
+        path: '/program',
+        name: 'Program',
+        component: () => import('../views/Program.vue')
+    },
+    {
+        path: '/Anime',
+        name: 'Anime',
+        component: () => import('../views/Anime.vue')
+    },
+    {
+        path: '/Game',
+        name: 'Game',
+        component: () => import('../views/Game.vue')
+    },
+    {
         path: '/friend',
         name: 'friend-link',
         component: () => import('../views/Friend.vue')

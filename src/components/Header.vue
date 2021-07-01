@@ -5,9 +5,9 @@
             <a href="/">
                 <img class="nav-img" src="../assets/logo.png" />
             </a>
-            <a class="nav-item" href="">编程</a>
-            <a class="nav-item" href="">动漫</a>
-            <a class="nav-item" href="">游戏</a>
+            <a class="nav-item" href="/program">编程</a>
+            <a class="nav-item" href="/Anime">动漫</a>
+            <a class="nav-item" href="/Game">游戏</a>
             <a class="nav-item" href="/friend">友链</a>
             <a class="nav-item" href="/about">关于我</a>
         </nav>
