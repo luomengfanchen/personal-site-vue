@@ -14,7 +14,8 @@
 
         <!-- 用户操作 -->
         <div class="nav-btn-group">
-            <a href="/login" class="nav-btn">Sign in</a>
+            <a href="/search" class="nav-btn">搜索</a>
+            <a href="/login" class="nav-btn">登录</a>
         </div>
     </header>
 </template>
