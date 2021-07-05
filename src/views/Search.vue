@@ -48,11 +48,11 @@ export default {
 /* 搜索栏样式 */
 .search-bar {
     border: #ddd solid 1px;
-    border-radius: 5px;
+    border-radius: 5%/50%;
     font-size: 20px;
     margin: 10px;
     outline: none;
-    padding: 10px;
+    padding: 10px 30px;
     width: 500px;
 }
 .search-bar:focus {

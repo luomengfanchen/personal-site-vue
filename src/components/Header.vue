@@ -72,18 +72,20 @@ export default {
     margin-right: 20px;
 }
 .nav-btn {
-    border: #fff solid 2px;
+    border: #000 solid 2px;
     border-radius: 5px;
     color: #000;
     font-family: 'Source Han Serif';
     font-weight: bold;
     font-size: 20px;
     margin-right: 20px;
-    padding: 5px 10px;
+    padding: 5px 20px;
     text-decoration: none;
 }
 .nav-btn:hover {
-    border: #000 solid 2px;
-    transition: border 0.2s ease-out 0s;
+    border: #4169e1 solid 2px;
+    background-color: #4169e1;
+    color: #fff;
+    transition: all 0.2s ease-out 0s;
 }
 </style>

@@ -58,7 +58,10 @@ export default {
     margin-left: 20px;
 }
 .friend-descript > a {
-    color: gray;
+    color: #808080;
     text-decoration: none;
+}
+.friend-descript > a:hover {
+    color: #4169e1;
 }
 </style>
