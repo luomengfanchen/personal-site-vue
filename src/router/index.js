@@ -13,7 +13,10 @@ const routes = [
     {
         path: '/login',
         name: 'Login',
-        component: () => import('../views/Login.vue')
+        component: () => import('../views/Login.vue'),
+        meta: {
+            title: '悠闲小站の登录'
+        }
     },
     {
         path: '/program',
@@ -36,7 +39,7 @@ const routes = [
         component: () => import('../views/Friend.vue')
     },
     {
-        path:'/search',
+        path: '/search',
         name: 'Search',
         component: () => import('../views/Search.vue')
     },
@@ -51,6 +54,18 @@ const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
     routes
+})
+
+// 路由守卫
+router.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        //判断是否有标题
+        document.title = to.meta.title
+    } else {
+        document.title = '落梦繁城の悠闲小站'
+    }
+
+    next()
 })
 
 export default router
