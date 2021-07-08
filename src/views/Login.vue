@@ -6,16 +6,16 @@
             <form id="form">
                 <div class="login-input">
                     <label for="account">账号</label>
-                    <input type="text" name="account" />
+                    <input type="text" v-model="account" />
                 </div>
 
                 <div class="login-input">
                     <label for="password">密码</label>
-                    <input type="password" name="password" />
+                    <input type="password" v-model="password" />
                 </div>
 
                 <div class="login-button">
-                    <input type="submit" value="登陆" />
+                    <input type="button" value="登陆" @click="login" />
                 </div>
             </form>
         </div>
@@ -24,7 +24,29 @@
 
 <script>
 export default {
-    name: 'Login'
+    name: 'Login',
+    data() {
+        return {
+            account: '',
+            password: ''
+        }
+    },
+    methods: {
+        login: function() {
+            this.axios
+                .post('/api/login', {
+                    account: this.account,
+                    password: this.password
+                })
+                .then((response) => {
+                    sessionStorage.setItem('token', response.data.token)
+                    this.$router.push('/')
+                })
+                .catch(() => {
+                    alert('账号密码输入错误')
+                })
+        }
+    }
 }
 </script>
 
