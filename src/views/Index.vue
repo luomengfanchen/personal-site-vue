@@ -1,57 +1,37 @@
 <template>
     <section class="content">
-        <div class="content-card">
-            <a class="content-link" href="#">
-                <h2 class="content-title">什么是HTML?</h2>
+        <div class="content-card" v-for="article in articleList" :key="article.id">
+            <a class="content-link" :href="'/article/' + article.id">
+                <h2 class="content-title">{{ article.title }}</h2>
             </a>
 
             <div class="content-descript">
-                <span>阅读量：100</span>
-                <span>发布时间：2020-10-10</span>
+                <span>阅读量：{{ article.reading }}</span>
+                <span>发布时间：{{ article.releaseDate }}</span>
             </div>
-            <p class="content-paragraph">
-                HTML 是用来描述网页的一种语言。 HTML 指的是超文本标记语言:
-                HyperText Markup Language HTML
-                不是一种编程语言，而是一种标记语言 标记语言是一套标记标签
-                (markup tag) HTML 使用标记标签来描述网页 HTML 文档包含了HTML
-                标签及文本内容 HTML文档也叫做 web 页面
-            </p>
-        </div>
-
-        <div class="content-card">
-            <h2 class="content-title">什么是 CSS?</h2>
-            <div class="content-descript">
-                <span>阅读量：100</span>
-                <span>发布时间：2020-10-10</span>
-            </div>
-            <p class="content-paragraph">
-                CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML
-                元素 样式通常存储在样式表中 把样式添加到 HTML 4.0
-                中，是为了解决内容与表现分离的问题
-                外部样式表可以极大提高工作效率 外部样式表通常存储在 CSS 文件中
-                多个样式定义可层叠为一个
-            </p>
-        </div>
-
-        <div class="content-card">
-            <h2 class="content-title">为什么学习 JavaScript?</h2>
-            <div class="content-descript">
-                <span>阅读量：100</span>
-                <span>发布时间：2020-10-10</span>
-            </div>
-            <p class="content-paragraph">
-                JavaScript 是 web 开发人员必须学习的 3 门语言中的一门： HTML
-                定义了网页的内容 CSS 描述了网页的布局 JavaScript
-                控制了网页的行为 本教程是关于 JavaScript 及介绍 JavaScript
-                如何与 HTML 和 CSS 一起工作。
-            </p>
+            <p class="content-paragraph">{{ article.content }}</p>
         </div>
     </section>
 </template>
 
 <script>
 export default {
-    name: 'Index'
+    name: 'Index',
+    data() {
+        return {
+            articleList: []
+        }
+    },
+    mounted() {
+        this.axios
+            .get('/api/latest')
+            .then((response) => {
+                this.articleList = response.data.data
+            })
+            .catch(() => {
+                window.alert('数据获取失败')
+            })
+    }
 }
 </script>
 

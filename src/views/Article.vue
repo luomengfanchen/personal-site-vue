@@ -1,95 +1,43 @@
 <template>
     <section class="content">
         <div class="content-div">
-            <h2 class="content-title">什么是 CSS?</h2>
+            <h2 class="content-title">{{ artlcle.title }}</h2>
             <div class="content-descript">
-                <span>阅读量：100</span>
-                <span>发布时间：2020-10-10</span>
+                <span>阅读量：{{ artlcle.reading }}</span>
+                <span>发布时间：{{ artlcle.releaseDate }}</span>
             </div>
 
-            <h3 class="content-title2">次级标题</h3>
-            <p class="content-paragraph">
-                CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML
-                元素 样式通常存储在样式表中 把样式添加到 HTML 4.0
-                中，是为了解决内容与表现分离的问题
-                外部样式表可以极大提高工作效率 外部样式表通常存储在 CSS 文件中
-                多个样式定义可层叠为一个
-            </p>
-            <p class="content-paragraph">
-                CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML
-                元素 样式通常存储在样式表中 把样式添加到 HTML 4.0
-                中，是为了解决内容与表现分离的问题
-                外部样式表可以极大提高工作效率 外部样式表通常存储在 CSS 文件中
-                多个样式定义可层叠为一个
-            </p>
-
-            <h3 class="content-title2">次级标题</h3>
-            <p class="content-paragraph">
-                CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML
-                元素 样式通常存储在样式表中 把样式添加到 HTML 4.0
-                中，是为了解决内容与表现分离的问题
-                外部样式表可以极大提高工作效率 外部样式表通常存储在 CSS 文件中
-                多个样式定义可层叠为一个
-            </p>
-            <p class="content-paragraph">
-                CSS 指层叠样式表 (Cascading Style Sheets) 样式定义如何显示 HTML
-                元素 样式通常存储在样式表中 把样式添加到 HTML 4.0
-                中，是为了解决内容与表现分离的问题
-                外部样式表可以极大提高工作效率 外部样式表通常存储在 CSS 文件中
-                多个样式定义可层叠为一个
-            </p>
-
-            <h3 class="content-title2">次级标题</h3>
-            <code class="content-code">
-                package main<br />
-
-                import (<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;"fmt"<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;"im/utils"<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;"net/http"<br />
-                )<br />
-
-                func init() {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;// 加载json配置<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;utils.LoadConfig("config.json")<br />
-
-                &nbsp;&nbsp;&nbsp;&nbsp;// 服务启动输出<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;fmt.Println("im server syestem
-                start.")<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;fmt.Println("at: http://",
-                utils.Config.Address)<br />
-                }<br />
-
-                func main() {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;// 创建多路复用器<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;mux := http.NewServeMux()<br />
-
-                &nbsp;&nbsp;&nbsp;&nbsp;// 静态文件服务<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;file := http.Dir(utils.Config.Static)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;mux.Handle("/",
-                http.FileServer(file))<br />
-
-                &nbsp;&nbsp;&nbsp;&nbsp;// 配置http服务<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;server := &http.Server{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Addr: utils.Config.Address,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Handler: mux,<br />
-                }<br />
-
-                // 开启监听服务<br />
-                server.ListenAndServe()<br />
-                }
-            </code>
+            <div v-html="parsed"></div>
         </div>
     </section>
 </template>
 
 <script>
+import markdownParse from '../plugins/markdown.js'
+
 export default {
-    name: 'Article'
+    name: 'Article',
+    data() {
+        return {
+            artlcle: {},
+            parsed: ''
+        }
+    },
+    mounted() {
+        this.axios
+            .get('/api/article?id=' + this.$route.params.id)
+            .then((response) => {
+                this.artlcle = response.data.data
+                this.parsed = markdownParse(this.artlcle.content)
+            })
+            .catch(() => {
+                window.alert('获取数据失败')
+            })
+    }
 }
 </script>
 
-<style scoped>
+<style>
 /* 内容容器 */
 .content {
     align-items: center;
