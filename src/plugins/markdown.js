@@ -1,5 +1,8 @@
 // markdown解析函数
 const markdownParse = function(content) {
+    // 解析<script>标签
+    content = content.replace(/<script>/g, '&lt;script&gt;')
+    content = content.replace(/<\/script>/g, '&lt;/script&gt;')
     // 将文章以\n分割为数组
     let arr = content.split('\n')
     // 解析后的字符串

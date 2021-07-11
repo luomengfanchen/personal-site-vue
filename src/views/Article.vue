@@ -7,7 +7,7 @@
                 <span>发布时间：{{ artlcle.releaseDate }}</span>
             </div>
 
-            <div v-html="parsed"></div>
+            <div class="content-content" v-html="parsed"></div>
         </div>
     </section>
 </template>
@@ -83,13 +83,19 @@ export default {
     margin-bottom: 20px;
 }
 
+/* 内容->内容 */
+.content-content {
+    display: flex;
+    flex-direction: column;
+}
+
 /* 内容->代码 */
 .content-code {
     background-color: #eee;
     border-radius: 10px;
     font-family: 'Source Han Mono';
-    font-size: 20px;
-    padding: 10px;
+    font-size: 10px;
+    padding: 20px;
     margin-bottom: 20px;
 }
 
