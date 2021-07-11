@@ -46,8 +46,9 @@ export default {
                 category: this.category,
                 content: this.content
             })
-            .then((response) => {
-                console.log(response.data)
+            .then(() => {
+                alert('发布成功');
+                this.$router.push('/')
             })
             .catch(() => {
                 alert('发布失败');
