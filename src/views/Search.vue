@@ -52,7 +52,7 @@ export default {
 /* 搜索栏样式 */
 .search-bar {
     border: #ddd solid 1px;
-    border-radius: 5%/50%;
+    border-radius: 3%/50%;
     font-size: 20px;
     margin: 10px;
     outline: none;

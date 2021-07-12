@@ -71,6 +71,10 @@ export default {
     margin-bottom: 20px;
 }
 .content-descript>span {
+    background-color: #4169e1;
+    border-radius: 5px;
+    color: #fff;
+    padding: 2px 5px;
     margin: 10px;
 }
 

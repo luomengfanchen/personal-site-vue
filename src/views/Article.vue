@@ -1,10 +1,11 @@
 <template>
     <section class="content">
         <div class="content-div">
-            <h2 class="content-title">{{ artlcle.title }}</h2>
+            <h2 class="content-title">{{ article.title }}</h2>
             <div class="content-descript">
-                <span>阅读量：{{ artlcle.reading }}</span>
-                <span>发布时间：{{ artlcle.releaseDate }}</span>
+                <span>阅读量：{{ article.reading }}</span>
+                <span>发布时间：{{ article.releaseDate }}</span>
+                <span>分类：{{ article.category }}</span>
             </div>
 
             <div class="content-content" v-html="parsed"></div>
@@ -19,7 +20,7 @@ export default {
     name: 'Article',
     data() {
         return {
-            artlcle: {},
+            article: {},
             parsed: ''
         }
     },
@@ -27,8 +28,8 @@ export default {
         this.axios
             .get('/api/article?id=' + this.$route.params.id)
             .then((response) => {
-                this.artlcle = response.data.data
-                this.parsed = markdownParse(this.artlcle.content)
+                this.article = response.data.data
+                this.parsed = markdownParse(this.article.content)
             })
             .catch(() => {
                 window.alert('获取数据失败')
@@ -81,6 +82,13 @@ export default {
     color: #555;
     font-family: 'Source Han Serif';
     margin-bottom: 20px;
+}
+.content-descript>span {
+    background-color: #4169e1;
+    border-radius: 5px;
+    color: #fff;
+    padding: 2px 5px;
+    margin: 10px;
 }
 
 /* 内容->内容 */
