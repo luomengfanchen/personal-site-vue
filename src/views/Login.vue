@@ -40,6 +40,7 @@ export default {
                 })
                 .then((response) => {
                     sessionStorage.setItem('token', response.data.token)
+                    this.$store.dispatch('asyncLoginStatus', response.data.token)
                     this.$router.push('/')
                 })
                 .catch(() => {

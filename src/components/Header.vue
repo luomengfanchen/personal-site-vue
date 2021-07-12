@@ -14,9 +14,9 @@
 
         <!-- 用户操作 -->
         <div class="nav-btn-group">
-            <a href="/search" class="nav-btn">搜索</a>
-            <a href="/create" class="nav-btn">新建</a>
-            <a href="/login" class="nav-btn">登录</a>
+            <a href="/search" class="nav-btn-primary">搜索</a>
+            <a href="/create" class="nav-btn" v-if="$store.getters.getLoginStatus != undefined">新建</a>
+            <a href="/login" class="nav-btn" v-else>登录</a>
         </div>
     </header>
 </template>
@@ -87,6 +87,24 @@ export default {
     border: #4169e1 solid 2px;
     background-color: #4169e1;
     color: #fff;
+    transition: all 0.2s ease-out 0s;
+}
+
+.nav-btn-primary{
+    background-color: #4169e1;
+    border: #4169e1 solid 2px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Source Han Serif';
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+.nav-btn-primary:hover {
+    background-color: #5e7edd;
+    border: #5e7edd solid 2px;
     transition: all 0.2s ease-out 0s;
 }
 </style>
