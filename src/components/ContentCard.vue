@@ -7,6 +7,7 @@
 
             <div class="content-descript">
                 <span>阅读量：{{ article.reading }}</span>
+                <span>作者：{{ article.author }}</span>
                 <span>发布时间：{{ article.releaseDate }}</span>
                 <span>分类：{{ article.category }}</span>
             </div>
