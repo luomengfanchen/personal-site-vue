@@ -92,7 +92,7 @@ export default {
 
 /* 二级级标题 */
 .content-title2 {
-    border-left: #4169e1 solid 6px;
+    border-left: #4169e1 solid 14px;
     font-family: 'Source Han Serif';
     font-size: 35px;
     font-weight: bold;
@@ -102,7 +102,7 @@ export default {
 
 /* 三级级级标题 */
 .content-title3 {
-    border-left: #4169e1 solid 6px;
+    border-left: #4169e1 solid 10px;
     font-family: 'Source Han Serif';
     font-size: 30px;
     font-weight: bold;
@@ -130,18 +130,14 @@ export default {
 
 /* 引用 */
 .content-quote {
-    color: #808080;
+    background-color: #d3d3d3;
+    border-left: #4169e1 solid 6px;
     font-family: 'Source Han Serif';
     font-size: 20px;
     font-style: italic;
     font-weight: bold;
+    padding: 10px;
     margin-bottom: 20px;
-}
-.content-quote::before {
-    content: '“';
-}
-.content-quote::after {
-    content: '”';
 }
 
 .content-img {
