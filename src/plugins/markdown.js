@@ -36,10 +36,17 @@ const markdownParse = function(content) {
                     // 对于每一行添加标签对
                     let line = arr[index].slice(2)
                     listStr += '<li>' + line + '</li>'
+
+                    // 若本身为最后一行直接调整索引
+                    if (index == arr.length - 1) {
+                        // 更改索引位置，退出循环
+                        i = index
+                    }
                 } else {
                     // 寻找结束位置
                     // 更改索引位置，退出循环
                     i = index
+                    console.log(i)
                     break
                 }
             }
@@ -57,6 +64,12 @@ const markdownParse = function(content) {
                     // 对于每一行添加标签对
                     let line = arr[index].slice(3)
                     listStr += '<li>' + line + '</li>'
+
+                    // 若本身为最后一行直接调整索引
+                    if (index == arr.length - 1) {
+                        // 更改索引位置，退出循环
+                        i = index
+                    }
                 } else {
                     // 寻找结束位置
                     // 更改索引位置，退出循环
