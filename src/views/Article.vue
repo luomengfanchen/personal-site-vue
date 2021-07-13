@@ -135,7 +135,6 @@ export default {
     font-size: 20px;
     font-style: italic;
     font-weight: bold;
-    text-indent: 2em;
     margin-bottom: 20px;
 }
 .content-quote::before {
