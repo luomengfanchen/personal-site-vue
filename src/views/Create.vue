@@ -15,7 +15,7 @@
                 </select>
             </div>
 
-            <textarea class="content" cols="60" rows="40" v-model="content"></textarea>
+            <textarea class="content" v-model="content"></textarea>
 
             <input
                 type="button"
@@ -68,20 +68,21 @@ export default {
 }
 
 .create-view {
-    box-shadow: 0px 0px 20px 0px #d3d3d3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px #4169e1;
     align-items: center;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     padding-top: 20px;
-    width: 700px;
+    width: 900px;
 }
 
 .title-div {
     margin: 10px;
 }
 .title {
-    border: #000 solid 1px;
+    border: #000 solid 2px;
     border-radius: 5px;
     font-family: 'Source Han Serif';
     font-size: 20px;
@@ -91,22 +92,24 @@ export default {
     margin: 10px;
 }
 .title:focus {
-    border: #4169e1 solid 1px;
+    border: #4169e1 solid 2px;
     transition: all 0.2s ease 0s;
 }
 
 .content {
-    border: #000 solid 1px;
+    border: #000 solid 2px;
     border-radius: 5px;
     font-family: 'Source Han Mono';
     font-size: 15px;
+    height: 900px;
+    width: 850px;
     overflow: auto;
     outline: none;
     padding: 10px;
     resize: none;
 }
 .content:focus {
-    border: #4169e1 solid 1px;
+    border: #4169e1 solid 2px;
     transition: all 0.2s ease 0s;
 }
 

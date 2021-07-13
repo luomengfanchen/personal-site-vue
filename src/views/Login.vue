@@ -65,7 +65,7 @@ export default {
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px #d3d3d3;
+    box-shadow: 0px 0px 5px 0px #4169e1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,6 +76,7 @@ export default {
 /* 登陆标题 */
 .login-title {
     font-family: 'Source Han Serif';
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
 }

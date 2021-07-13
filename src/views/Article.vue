@@ -56,35 +56,27 @@ export default {
     flex-direction: column;
     margin-top: 10px;
     padding: 50px;
-    width: 700px;
+    width: 900px;
 }
 
 /* 内容标题 */
 .content-title {
     border-bottom: #000 solid 2px;
     font-family: 'Source Han Serif';
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* 次级标题 */
-.content-title2 {
-    border-left: #4169e1 solid 6px;
-    font-family: 'Source Han Serif';
-    font-size: 25px;
-    font-weight: bold;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
+/* 内容描述 */
 .content-descript {
     align-self: center;
     color: #555;
     font-family: 'Source Han Serif';
     margin-bottom: 20px;
 }
-.content-descript>span {
+
+.content-descript > span {
     background-color: #4169e1;
     border-radius: 5px;
     color: #fff;
@@ -98,12 +90,74 @@ export default {
     flex-direction: column;
 }
 
+/* 二级级标题 */
+.content-title2 {
+    border-left: #4169e1 solid 6px;
+    font-family: 'Source Han Serif';
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 三级级级标题 */
+.content-title3 {
+    border-left: #4169e1 solid 6px;
+    font-family: 'Source Han Serif';
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 四级级标题 */
+.content-title4 {
+    border-left: #4169e1 solid 6px;
+    font-family: 'Source Han Serif';
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 列表项 */
+.content-list {
+    font-family: 'Source Han Serif';
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 引用 */
+.content-quote {
+    color: #808080;
+    font-family: 'Source Han Serif';
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    text-indent: 2em;
+    margin-bottom: 20px;
+}
+.content-quote::before {
+    content: '“';
+}
+.content-quote::after {
+    content: '”';
+}
+
+.content-img {
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
 /* 内容->代码 */
 .content-code {
-    background-color: #eee;
-    border-radius: 10px;
+    background-color: #263238;
+    color: #b2ccd6;
+    border-radius: 5px;
     font-family: 'Source Han Mono';
-    font-size: 10px;
+    font-size: 15px;
+    font-weight: bold;
     padding: 20px;
     margin-bottom: 20px;
 }

@@ -29,15 +29,15 @@ export default {
 /* 友链卡片 */
 .friend-card {
     align-items: center;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #d3d3d3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #4169e1;
     display: flex;
     flex-direction: row;
     padding: 20px;
     margin-top: 10px;
 }
 .friend-card:hover {
-    box-shadow: 0px 0px 20px 0px #d3d3d3;
+    box-shadow: 0px 0px 20px 0px #4169e1;
     transition: all 0.2s ease-out 0s;
 }
 

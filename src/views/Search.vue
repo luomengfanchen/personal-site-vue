@@ -51,7 +51,7 @@ export default {
 
 /* 搜索栏样式 */
 .search-bar {
-    border: #ddd solid 1px;
+    border: #4169e1 solid 2px;
     border-radius: 3%/50%;
     font-size: 20px;
     margin: 10px;
@@ -60,7 +60,7 @@ export default {
     width: 700px;
 }
 .search-bar:focus {
-    border: #4169e1 solid 1px;
+    box-shadow: 0px 0px 3px 2px #4169e1;
     transition: all 0.2s ease 0s;
 }
 </style>

@@ -26,8 +26,8 @@ export default {
 /* 关于容器-卡片 */
 #about {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #d3d3d3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #4169e1;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -36,7 +36,7 @@ export default {
     width: 700px;
 }
 #about:hover {
-    box-shadow: 0px 0px 20px 0px #d3d3d3;
+    box-shadow: 0px 0px 20px 0px #4169e1;
     transition: all 0.2s ease-out 0s;
 }
 
@@ -62,7 +62,7 @@ export default {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin: 10px;
 }
 .skill-title {
     border-bottom: #d3d3d3 solid 1px;
