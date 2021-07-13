@@ -1,24 +1,14 @@
-# personal-site-vue
+# 使用vue开发的个人博客网站前端页面
 
-## Project setup
+## 功能
+1. 实现了用户的登录请求
+2. 实现了对文章的各种请求
+2. 实现了一部分对于markdown语法的解析
+
+## 如何使用此项目
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 后端接口地址
+[https://github.com/luomengfanchen/personal-site-server](https://github.com/luomengfanchen/personal-site-server)
