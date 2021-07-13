@@ -22,7 +22,7 @@ const markdownParse = function(content) {
             // 解析四级级标题: 开头为###
             str += '<h4 class="content-title4">' + arr[i].slice(5) + '</h4>'
 
-        } else if (arr[i].indexOf('> ') == 0) {
+        } else if (arr[i].search(/\x20*> /) == 0) {
             // 解析引用: 开头为'> '
             str += '<p class="content-quote">' + arr[i].slice(5) + '</p>'
 
@@ -45,8 +45,7 @@ const markdownParse = function(content) {
                 } else {
                     // 寻找结束位置
                     // 更改索引位置，退出循环
-                    i = index
-                    console.log(i)
+                    i = index - 1
                     break
                 }
             }
@@ -73,7 +72,7 @@ const markdownParse = function(content) {
                 } else {
                     // 寻找结束位置
                     // 更改索引位置，退出循环
-                    i = index
+                    i = index - 1
                     break
                 }
             }
@@ -81,13 +80,13 @@ const markdownParse = function(content) {
             listStr += '</ol>'
             str += listStr
 
-        } else if (arr[i].indexOf('```') == 0) {
+        } else if (arr[i].search(/\x20*```/) == 0) {
             // 解析代码: 开头为```
             let codeStr = '<code class="content-code">'
 
             for (let index = i + 1; index < arr.length; index++) {
                 // 若不为结尾的: ```
-                if (arr[index].indexOf('```') != 0) {
+                if (arr[index].search(/\x20*```/) != 0) {
                     // 对于每一行填充&nbsp;和<br>
                     let line = arr[index]
                     line = line.replace(/\x20\x20\x20\x20/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
