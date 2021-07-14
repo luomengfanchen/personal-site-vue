@@ -9,23 +9,21 @@ const markdownParse = function(content) {
     let str = new String()
 
     for (let i = 0; i < arr.length; i++) {
-
         if (arr[i].indexOf('## ') == 0) {
             // 解析二级标题: 开头为##
             str += '<h3 class="content-title2">' + arr[i].slice(3) + '</h3>'
-
         } else if (arr[i].indexOf('### ') == 0) {
             // 解析三级标题: 开头为###
             str += '<h4 class="content-title3">' + arr[i].slice(4) + '</h4>'
-
         } else if (arr[i].indexOf('#### ') == 0) {
             // 解析四级级标题: 开头为###
             str += '<h4 class="content-title4">' + arr[i].slice(5) + '</h4>'
-
         } else if (arr[i].search(/\x20*> /) == 0) {
             // 解析引用: 开头为'> '
-            str += '<p class="content-quote">' + arr[i].slice(arr[i].search(/> /) + 2) + '</p>'
-
+            str +=
+                '<p class="content-quote">' +
+                arr[i].slice(arr[i].search(/> /) + 2) +
+                '</p>'
         } else if (arr[i].indexOf('- ') == 0) {
             // 解析无序列表
             let listStr = '<ul class="content-list">'
@@ -52,7 +50,6 @@ const markdownParse = function(content) {
 
             listStr += '</ul>'
             str += listStr
-
         } else if (arr[i].search(/^[0-9]*\. /) == 0) {
             // 解析有序列表
             let listStr = '<ol class="content-list">'
@@ -79,7 +76,6 @@ const markdownParse = function(content) {
 
             listStr += '</ol>'
             str += listStr
-
         } else if (arr[i].search(/\x20*```/) == 0) {
             // 解析代码: 开头为```
             let codeStr = '<code class="content-code">'
@@ -89,7 +85,10 @@ const markdownParse = function(content) {
                 if (arr[index].search(/\x20*```/) != 0) {
                     // 对于每一行填充&nbsp;和<br>
                     let line = arr[index]
-                    line = line.replace(/\x20\x20\x20\x20/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
+                    line = line.replace(
+                        /\x20\x20\x20\x20/g,
+                        '&nbsp;&nbsp;&nbsp;&nbsp;'
+                    )
                     line = line.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
                     codeStr += line + '<br />'
                 } else {

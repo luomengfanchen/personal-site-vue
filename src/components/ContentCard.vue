@@ -1,6 +1,10 @@
 <template>
     <div class="content">
-        <div class="content-card" v-for="article in articleList" :key="article.id">
+        <div
+            class="content-card"
+            v-for="article in articleList"
+            :key="article.id"
+        >
             <a class="content-link" :href="'/article/' + article.id">
                 <h2 class="content-title">{{ article.title }}</h2>
             </a>
@@ -11,6 +15,7 @@
                 <span>发布时间：{{ article.releaseDate }}</span>
                 <span>分类：{{ article.category }}</span>
             </div>
+
             <p class="content-paragraph">{{ article.content }}</p>
         </div>
     </div>
@@ -71,8 +76,8 @@ export default {
     font-family: 'Source Han Serif';
     margin-bottom: 20px;
 }
-.content-descript>span {
-    background-color: #4169e1;
+.content-descript > span {
+    background-color: #ffcc00;
     border-radius: 5px;
     color: #fff;
     padding: 2px 5px;

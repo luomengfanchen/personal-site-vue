@@ -6,7 +6,9 @@
             </div>
 
             <div class="friend-descript">
-                <a href="http://www.kirrisgu.top">樱花庄の小悠 - 你是我一生只会遇到一次的惊喜</a>
+                <a href="http://www.kirrisgu.top">
+                    樱花庄の小悠 - 你是我一生只会遇到一次的惊喜
+                </a>
             </div>
         </div>
     </div>

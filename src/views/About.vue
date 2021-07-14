@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style  scoped>
+<style scoped>
 /* 关于容器-卡片 */
 #about {
     background-color: #fff;

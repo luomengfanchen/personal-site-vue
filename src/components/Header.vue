@@ -15,7 +15,12 @@
         <!-- 用户操作 -->
         <div class="nav-btn-group">
             <a href="/search" class="nav-btn-primary">搜索</a>
-            <a href="/create" class="nav-btn" v-if="$store.getters.getLoginStatus != undefined">新建</a>
+            <a
+                href="/create"
+                class="nav-btn"
+                v-if="$store.getters.getLoginStatus != undefined"
+                >新建</a
+            >
             <a href="/login" class="nav-btn" v-else>登录</a>
         </div>
     </header>
@@ -90,7 +95,7 @@ export default {
     transition: all 0.2s ease-out 0s;
 }
 
-.nav-btn-primary{
+.nav-btn-primary {
     background-color: #4169e1;
     border: #4169e1 solid 2px;
     border-radius: 5px;

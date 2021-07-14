@@ -77,7 +77,7 @@ export default {
 }
 
 .content-descript > span {
-    background-color: #4169e1;
+    background-color: #ffcc00;
     border-radius: 5px;
     color: #fff;
     padding: 2px 5px;
