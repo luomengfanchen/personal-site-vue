@@ -84,7 +84,6 @@ export default {
     color: #555;
     font-family: 'Source Han Serif';
     overflow: hidden;
-    text-indent: 2em;
     text-overflow: ellipsis;
     white-space: nowrap;
 }

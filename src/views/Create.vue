@@ -5,7 +5,7 @@
                 <input
                     type="text"
                     class="title"
-                    placeholder="请输入文章标题…………"
+                    placeholder="请输入文章标题······"
                     v-model="title"
                 />
                 <select class="title" v-model="category">
@@ -41,21 +41,29 @@ export default {
     },
     methods: {
         createNew: function() {
-            instance.post('/create', {
-                title: this.title,
-                category: this.category,
-                content: this.content
-            })
-            .then(() => {
-                alert('发布成功');
-                this.$router.push('/')
-            })
-            .catch(() => {
-                alert('发布失败');
-            })
+            if (this.title == '') {
+                alert('标题不能为空')
+            } else if (this.category == '') {
+                alert('请选择分类')
+            } else if (this.content == '') {
+                alert('内容不能为空')
+            } else {
+                instance
+                    .post('/create', {
+                        title: this.title,
+                        category: this.category,
+                        content: this.content
+                    })
+                    .then(() => {
+                        alert('发布成功')
+                        this.$router.push('/')
+                    })
+                    .catch(() => {
+                        alert('发布失败')
+                    })
+            }
         }
     }
-        
 }
 </script>
 
@@ -107,6 +115,7 @@ export default {
     outline: none;
     padding: 10px;
     resize: none;
+    white-space: nowrap;
 }
 .content:focus {
     border: #4169e1 solid 2px;

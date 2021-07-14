@@ -153,8 +153,10 @@ export default {
     font-family: 'Source Han Mono';
     font-size: 15px;
     font-weight: bold;
+    overflow: auto;
     padding: 20px;
     margin-bottom: 20px;
+    white-space: nowrap;
 }
 
 /* 内容段落 */
