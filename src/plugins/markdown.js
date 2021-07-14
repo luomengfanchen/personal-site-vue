@@ -24,7 +24,7 @@ const markdownParse = function(content) {
 
         } else if (arr[i].search(/\x20*> /) == 0) {
             // 解析引用: 开头为'> '
-            str += '<p class="content-quote">' + arr[i].slice(5) + '</p>'
+            str += '<p class="content-quote">' + arr[i].slice(arr[i].search(/> /) + 2) + '</p>'
 
         } else if (arr[i].indexOf('- ') == 0) {
             // 解析无序列表
