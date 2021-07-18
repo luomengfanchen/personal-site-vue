@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: '/api',
+    baseURL: '/api/user',
     headers: { Authorization: sessionStorage.getItem('token') }
 })
 

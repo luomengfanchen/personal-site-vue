@@ -21,7 +21,7 @@ export default {
     },
     mounted() {
         this.axios
-            .get('/api/articleyycategory?category=game')
+            .get('/api/article?category=game')
             .then((response) => {
                 this.articleList = response.data.data
             })

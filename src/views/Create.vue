@@ -49,7 +49,7 @@ export default {
                 alert('内容不能为空')
             } else {
                 instance
-                    .post('/create', {
+                    .post('/article', {
                         title: this.title,
                         category: this.category,
                         content: this.content
@@ -109,7 +109,7 @@ export default {
     border-radius: 5px;
     font-family: 'Source Han Mono';
     font-size: 15px;
-    height: 900px;
+    height: 850px;
     width: 850px;
     overflow: auto;
     outline: none;

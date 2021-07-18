@@ -27,7 +27,7 @@ export default {
     methods: {
         search: function() {
             this.axios
-                .get('/api/search?title=' + this.searchVal)
+                .get('/api/article?search=' + this.searchVal)
                 .then((response) => {
                     this.articleList = response.data.data
                 })

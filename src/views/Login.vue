@@ -5,8 +5,8 @@
 
             <form id="form">
                 <div class="login-input">
-                    <label for="account">账号</label>
-                    <input type="text" v-model="account" />
+                    <label for="account">邮箱</label>
+                    <input type="text" v-model="email" />
                 </div>
 
                 <div class="login-input">
@@ -27,7 +27,7 @@ export default {
     name: 'Login',
     data() {
         return {
-            account: '',
+            email: '',
             password: ''
         }
     },
@@ -35,7 +35,7 @@ export default {
         login: function() {
             this.axios
                 .post('/api/login', {
-                    account: this.account,
+                    email: this.email,
                     password: this.password
                 })
                 .then((response) => {

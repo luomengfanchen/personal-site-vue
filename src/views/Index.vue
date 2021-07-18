@@ -15,7 +15,7 @@ export default {
     },
     mounted() {
         this.axios
-            .get('/api/latest')
+            .get('/api/article')
             .then((response) => {
                 this.articleList = response.data.data
             })
