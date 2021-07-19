@@ -19,6 +19,24 @@ const routes = [
         }
     },
     {
+        path: '/register',
+        name: 'Register',
+        component: () => import('../views/Register.vue'),
+        meta: {
+            title: '悠闲小站の注册'
+        }
+    },
+    {
+        path: '/manager',
+        name: 'Manager',
+        component: () => import('../views/Manager.vue'),
+    },
+    {
+        path: '/modify/:id',
+        name: 'Modify',
+        component: () => import('../views/Modify.vue')
+    },
+    {
         path: '/program',
         name: 'Program',
         component: () => import('../views/Program.vue')

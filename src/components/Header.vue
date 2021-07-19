@@ -8,20 +8,24 @@
             <a class="nav-item" href="/program">编程</a>
             <a class="nav-item" href="/Anime">动漫</a>
             <a class="nav-item" href="/Game">游戏</a>
-            <a class="nav-item" href="/friend">友链</a>
-            <a class="nav-item" href="/about">关于我</a>
+            <a class="nav-item" href="/friend">站主友链</a>
+            <a class="nav-item" href="/about">关于站主</a>
         </nav>
 
         <!-- 用户操作 -->
         <div class="nav-btn-group">
             <a href="/search" class="nav-btn-primary">搜索</a>
-            <a
-                href="/create"
-                class="nav-btn"
-                v-if="$store.getters.getLoginStatus != undefined"
-                >新建</a
-            >
-            <a href="/login" class="nav-btn" v-else>登录</a>
+
+            <!-- 若为登录状态，显示登录后可做的操作按钮 -->
+            <div class="nav-btn-group" v-if="$store.getters.getLoginStatus != undefined">
+                <a href="/manager" class="nav-btn">管理</a>
+                <a href="/create" class="nav-btn">新建</a>
+            </div>
+            <!-- 若不为登录状态显示登录/注册按钮 -->
+            <div class="nav-btn-group" v-else>
+                <a href="/login" class="nav-btn">登录</a>
+            <a href="/register" class="nav-btn">注册</a>
+            </div>
         </div>
     </header>
 </template>
@@ -75,7 +79,6 @@ export default {
 /* 导航栏按钮样式 */
 .nav-btn-group {
     display: flex;
-    margin-right: 20px;
 }
 .nav-btn {
     border: #000 solid 2px;
