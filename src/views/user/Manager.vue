@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import instance from '../plugins/axios.js'
+import instance from '../../plugins/axios.js'
 
 export default {
     name: 'Manager',
@@ -44,7 +44,7 @@ export default {
             this.$router.push('/article/' + id)
         },
         ModifyArticle: function(id) {
-            this.$router.push('/modify/' + id)
+            this.$router.push('/user/modify/' + id)
         },
         DeleteArticle: function(id) {
             console.log(id)

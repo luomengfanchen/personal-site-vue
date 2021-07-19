@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import instance from '../plugins/axios.js'
+import instance from '../../plugins/axios.js'
 
 export default {
     name: 'Create',
@@ -69,7 +69,7 @@ export default {
                     })
                     .then(() => {
                         alert('修改成功')
-                        this.$router.push('/manager')
+                        this.$router.push('/user/manager')
                     })
                     .catch(() => {
                         alert('修改失败')

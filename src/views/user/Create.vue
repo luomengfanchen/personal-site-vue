@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import instance from '../plugins/axios.js'
+import instance from '../../plugins/axios.js'
 
 export default {
     name: 'Create',

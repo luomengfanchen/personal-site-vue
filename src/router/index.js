@@ -5,6 +5,7 @@ import Index from '../views/Index.vue'
 Vue.use(VueRouter)
 
 const routes = [
+    // 访客可访问的页面
     {
         path: '/',
         name: 'Index',
@@ -25,16 +26,6 @@ const routes = [
         meta: {
             title: '悠闲小站の注册'
         }
-    },
-    {
-        path: '/manager',
-        name: 'Manager',
-        component: () => import('../views/Manager.vue'),
-    },
-    {
-        path: '/modify/:id',
-        name: 'Modify',
-        component: () => import('../views/Modify.vue')
     },
     {
         path: '/program',
@@ -71,10 +62,23 @@ const routes = [
         name: 'About',
         component: () => import('../views/About.vue')
     },
+
+    // 访客不可访问的页面
     {
-        path: '/create',
+        path: '/user/manager',
+        name: 'Manager',
+        component: () => import('../views/user/Manager.vue'),
+    },
+    {
+        path: '/user/modify/:id',
+        name: 'Modify',
+        component: () => import('../views/user/Modify.vue')
+    },
+    
+    {
+        path: '/user/create',
         name: 'Create',
-        component: () => import('../views/Create.vue')
+        component: () => import('../views/user/Create.vue')
     }
 ]
 
