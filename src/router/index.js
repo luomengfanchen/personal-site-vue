@@ -65,20 +65,35 @@ const routes = [
 
     // 访客不可访问的页面
     {
+        path: '/user/info',
+        name: 'Info',
+        component: () => import('../views/user/UserInfo.vue')
+    },
+    {
         path: '/user/manager',
         name: 'Manager',
-        component: () => import('../views/user/Manager.vue'),
+        component: () => import('../views/user/Manager.vue')
     },
     {
         path: '/user/modify/:id',
         name: 'Modify',
         component: () => import('../views/user/Modify.vue')
     },
-    
+
     {
         path: '/user/create',
         name: 'Create',
         component: () => import('../views/user/Create.vue')
+    },
+
+    // 404页面
+    {
+        path: '*',
+        name: 'NotFound',
+        component: () => import('../views/error/NotFound.vue'),
+        meta: {
+            title: '悠闲小站の404NotFound'
+        }
     }
 ]
 
@@ -97,7 +112,14 @@ router.beforeEach((to, from, next) => {
         document.title = '落梦繁城の悠闲小站'
     }
 
-    next()
+    if (
+        (to.name == 'Info' || to.name == 'Create' || to.name == 'Modify') &&
+        sessionStorage.getItem('token') == undefined
+    ) {
+        next('NotFound')
+    } else {
+        next()
+    }
 })
 
 export default router

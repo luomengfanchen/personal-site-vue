@@ -18,8 +18,10 @@
 
             <!-- 若为登录状态，显示登录后可做的操作按钮 -->
             <div class="nav-btn-group" v-if="$store.getters.getLoginStatus != undefined">
-                <a href="/user/manager" class="nav-btn">管理</a>
-                <a href="/user/create" class="nav-btn">新建</a>
+                <a href="/user/info" class="nav-btn">个人信息</a>
+                <a href="/user/manager" class="nav-btn">文章管理</a>
+                <a href="/user/create" class="nav-btn">新建文章</a>
+                
             </div>
             <!-- 若不为登录状态显示登录/注册按钮 -->
             <div class="nav-btn-group" v-else>
@@ -106,7 +108,7 @@ export default {
     font-family: 'Source Han Serif';
     font-weight: bold;
     font-size: 20px;
-    margin-right: 20px;
+    margin-right: 50px;
     padding: 5px 20px;
     text-decoration: none;
 }
