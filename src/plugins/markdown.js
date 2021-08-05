@@ -101,9 +101,145 @@ const markdownParse = function(content) {
 
             codeStr += '</code>'
             str += codeStr
+        } else if (arr[i].search(/^\x7C [\S \x7C]+/) == 0) {
+            // 解析表格：| content | content | content |
+            let tableStr = '<table class="content-table">'
+
+            let headerItem = arr[i].split('|')
+            // 解析表头
+            tableStr += '<tr class="content-table-tr">'
+            for (let index = 0; index < headerItem.length; index++) {
+                if (headerItem[index] !== '') {
+                    tableStr +=
+                        '<th class="content-table-th">' +
+                        headerItem[index] +
+                        '</th>'
+                }
+            }
+            tableStr += '</tr>'
+
+            // 解析表内容
+            for (let index = i + 2; index < arr.length; index++) {
+                if (arr[index].search(/^\x7C [\S \x7C]+/) == 0) {
+                    let items = arr[index].split('|')
+
+                    tableStr += '<tr class="content-table-tr">'
+                    for (
+                        let itemIndex = 0;
+                        itemIndex < items.length;
+                        itemIndex++
+                    ) {
+                        if (items[itemIndex] !== '') {
+                            tableStr +=
+                                '<td class="content-table-td">' +
+                                items[itemIndex] +
+                                '</td>'
+                        }
+                    }
+                    tableStr += '</tr>'
+
+                    // 若本身为最后一行直接调整索引
+                    if (index == arr.length - 1) {
+                        // 更改索引位置，退出循环
+                        i = index
+                    }
+                } else {
+                    // 更改索引位置，退出循环
+                    i = index
+                    break
+                }
+            }
+
+            tableStr += '</table>'
+            str += tableStr
+        } else if (arr[i].search(/^!\[(.*?)\]\((.*?)\)/) == 0) {
+            // 解析图片：![属性文本](图片地址)
+            let imgStr = arr[i]
+            let hrefStr = ''
+            let altStr = ''
+
+            // 提取内容
+            for (let aIndex = 2; aIndex <= imgStr.length; aIndex++) {
+                if (imgStr[aIndex] != ']') {
+                    altStr += imgStr[aIndex]
+                } else {
+                    for (let hIndex = aIndex + 2; imgStr.length; hIndex++) {
+                        if (imgStr[hIndex] != ')') {
+                            hrefStr += imgStr[hIndex]
+                        } else {
+                            break
+                        }
+                    }
+                    break
+                }
+            }
+
+            // 组合成html标签
+            str +=
+                '<img src="' +
+                hrefStr +
+                '" alt="' +
+                altStr +
+                '" class="content-img">'
         } else {
             // 解析段落文本
-            str += '<p class="content-paragraph">' + arr[i] + '</p>'
+
+            // 将段落中的超链接解析出来
+            // [链接名称](链接地址)
+            let paragraphStr = arr[i]
+            let linkName = ''
+            let linkAddress = ''
+
+            str += '<p class="content-paragraph">'
+
+            // 检测是否有超链接内容
+            if (paragraphStr.search(/(.*?)\[(.*?)\]\((.*?)\)(.*?)/) == 0) {
+                // 提取超链接内容
+                for (let index = 0; index <= paragraphStr.length; index++) {
+                    // 提取链接名称
+                    if (paragraphStr[index] === '[') {
+                        for (
+                            let nIndex = index + 1;
+                            nIndex <= paragraphStr.length;
+                            nIndex++
+                        ) {
+                            if (paragraphStr[nIndex] !== ']') {
+                                linkName += paragraphStr[nIndex]
+                            } else {
+                                for (
+                                    let aIndex = nIndex + 2;
+                                    aIndex <= paragraphStr.length;
+                                    aIndex++
+                                ) {
+                                    // 提取链接地址
+                                    if (paragraphStr[aIndex] !== ')') {
+                                        linkAddress += paragraphStr[aIndex]
+                                    } else {
+                                        // 更改索引位置
+                                        index = aIndex + 1
+                                        break
+                                    }
+                                }
+
+                                // 组合成html标签
+                                str +=
+                                    '<a href="' +
+                                    linkAddress +
+                                    '" class="content-hyperlink" target="_blank">' +
+                                    linkName +
+                                    '</a> '
+                                linkAddress = ''
+                                linkName = ''
+                                break
+                            }
+                        }
+                    } else {
+                        str += paragraphStr[index]
+                    }
+                }
+            }
+
+            str += '</p>'
         }
     }
 

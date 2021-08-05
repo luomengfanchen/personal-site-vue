@@ -159,11 +159,73 @@ export default {
     white-space: nowrap;
 }
 
+/* 图片 */
+.content-img {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 900px;
+}
+
 /* 内容段落 */
 .content-paragraph {
     font-family: 'Source Han Serif';
     font-size: 20px;
     text-indent: 2em;
     margin-bottom: 20px;
+}
+
+/* 超链接样式 */
+.content-hyperlink {
+    background-color: rgba(65, 105, 225, 0.3);
+        border-radius: 5px;
+    color: #4169e1;
+    text-decoration: none;
+}
+.content-hyperlink:hover {
+    background-color: rgba(65, 105, 225, 0.8);
+    color: #fff;
+    transition: all 0.2s ease-out 0s;
+}
+
+/* 表格样式 */
+.content-table {
+    border: #ddd solid 2px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    width: 900px;
+}
+
+.content-table-tr {
+    border-bottom: #aaa solid 1px;
+    font-family: 'Source Han Serif';
+    font-size: 20px;
+}
+.content-table-tr:hover {
+    background-color: #eee;
+}
+.content-table-tr:first-child {
+    border-bottom: #777 solid 2px;
+    color: #4169e1;
+}
+.content-table-tr:first-child:hover {
+    background-color: #fff;
+}
+
+.content-table-th {
+    border: #aaa solid 1px;
+    font-family: 'Source Han Serif';
+    font-size: 25px;
+    font-weight: bold;
+    min-width: 150px;
+    padding: 10px;
+}
+
+.content-table-td {
+    border: #aaa solid 1px;
+    font-family: 'Source Han Serif';
+    font-size: 20px;
+    min-width: 150px;
+    text-align: center;
+    padding: 10px;
 }
 </style>

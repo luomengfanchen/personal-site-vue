@@ -32,7 +32,7 @@ export default {
 .friend-card {
     align-items: center;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px #4169e1;
+    box-shadow: 0px 0px 10px 0px #d3d3d3;
     display: flex;
     flex-direction: row;
     padding: 20px;

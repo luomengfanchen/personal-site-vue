@@ -27,7 +27,7 @@ export default {
 #about {
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px #4169e1;
+    box-shadow: 0px 0px 10px 0px #d3d3d3;
     display: flex;
     flex-direction: column;
     padding: 20px;

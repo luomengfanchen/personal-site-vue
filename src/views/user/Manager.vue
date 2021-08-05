@@ -115,9 +115,9 @@ export default {
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 50px;
-    padding-bottom: 10px;
+    padding: 10px;
     width: 900px;
 }
 .manager-title-content {
@@ -133,8 +133,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     margin: 10px;
-    padding: 1px;
-    width: 850px;
+    width: 900px;
 }
 
 .manager-content-category {
@@ -144,6 +143,8 @@ export default {
     font-size: 20px;
     margin-left: 10px;
     padding: 5px;
+    text-align: center;
+    width: 100px;
 }
 .manager-content-category-program {
     background-color: #263238;

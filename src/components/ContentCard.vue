@@ -41,7 +41,7 @@ export default {
 .content-card {
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0px 1px 10px 0px #4169e1;
+    box-shadow: 0px 0px 10px 0px #d3d3d3;
     display: flex;
     flex-direction: column;
     margin-top: 50px;
@@ -49,7 +49,7 @@ export default {
     width: 900px;
 }
 .content-card:hover {
-    box-shadow: 0px 1px 20px 0px #4169e1;
+    box-shadow: 0px 0px 20px 0px #4169e1;
     transition: all 0.2s ease-out 0s;
 }
 

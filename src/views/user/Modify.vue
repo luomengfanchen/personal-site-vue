@@ -90,7 +90,7 @@ export default {
 
 .create-view {
     border-radius: 5px;
-    box-shadow: 0px 0px 20px 0px #4169e1;
+    box-shadow: 0px 0px 20px 0px #d3d3d3;
     align-items: center;
     display: flex;
     flex-direction: column;
