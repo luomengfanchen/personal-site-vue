@@ -237,6 +237,8 @@ const markdownParse = function(content) {
                         str += paragraphStr[index]
                     }
                 }
+            } else {
+                str += paragraphStr
             }
 
             str += '</p>'
