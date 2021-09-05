@@ -1,33 +1,35 @@
 <template>
     <div class="info-container">
-        <div class="info-card">
-            <div class="info-horizonal-box">
-                <div class="info-vertional-box">
-                    <h2 class="info-title">个人信息</h2>
-                    <div class="info-box">
-                        <label for="email" class="info-label">邮箱</label>
-                        <input
-                            type="text"
-                            class="info-input-box"
-                            readonly
-                            v-model="email"
-                        />
+        <transition appear>
+            <div class="info-card">
+                <div class="info-horizonal-box">
+                    <div class="info-vertional-box">
+                        <h2 class="info-title">个人信息</h2>
+                        <div class="info-box">
+                            <label for="email" class="info-label">邮箱</label>
+                            <input
+                                type="text"
+                                class="info-input-box"
+                                readonly
+                                v-model="email"
+                            />
+                        </div>
+
+                        <div class="info-box">
+                            <label for="name" class="info-label">昵称</label>
+                            <input
+                                type="text"
+                                class="info-input-box"
+                                readonly
+                                v-model="name"
+                            />
+                        </div>
                     </div>
 
-                    <div class="info-box">
-                        <label for="name" class="info-label">昵称</label>
-                        <input
-                            type="text"
-                            class="info-input-box"
-                            readonly
-                            v-model="name"
-                        />
-                    </div>
+                    <div class="info-img-box"></div>
                 </div>
-
-                <div class="info-img-box"></div>
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 

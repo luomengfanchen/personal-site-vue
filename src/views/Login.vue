@@ -1,24 +1,26 @@
 <template>
     <div class="login">
-        <div class="login-card">
-            <h2 class="login-title">欢迎登陆</h2>
+        <transition appear>
+            <div class="login-card">
+                <h2 class="login-title">欢迎登陆</h2>
 
-            <form id="form">
-                <div class="login-input">
-                    <label for="account">邮箱</label>
-                    <input type="text" v-model="email" />
-                </div>
+                <form id="form">
+                    <div class="login-input">
+                        <label for="account">邮箱</label>
+                        <input type="text" v-model="email" />
+                    </div>
 
-                <div class="login-input">
-                    <label for="password">密码</label>
-                    <input type="password" v-model="password" />
-                </div>
+                    <div class="login-input">
+                        <label for="password">密码</label>
+                        <input type="password" v-model="password" />
+                    </div>
 
-                <div class="login-button">
-                    <input type="button" value="登陆" @click="login" />
-                </div>
-            </form>
-        </div>
+                    <div class="login-button">
+                        <input type="button" value="登陆" @click="login" />
+                    </div>
+                </form>
+            </div>
+        </transition>
     </div>
 </template>
 

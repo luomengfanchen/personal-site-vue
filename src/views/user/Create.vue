@@ -1,29 +1,31 @@
 <template>
     <div class="create">
-        <div class="create-view">
-            <div class="title-div">
+        <transition appear>
+            <div class="create-view">
+                <div class="title-div">
+                    <input
+                        type="text"
+                        class="title"
+                        placeholder="请输入文章标题······"
+                        v-model="title"
+                    />
+                    <select class="title" v-model="category">
+                        <option value="program">编程</option>
+                        <option value="anime">动漫</option>
+                        <option value="game">游戏</option>
+                    </select>
+                </div>
+
+                <textarea class="content" v-model="content"></textarea>
+
                 <input
-                    type="text"
-                    class="title"
-                    placeholder="请输入文章标题······"
-                    v-model="title"
+                    type="button"
+                    class="create-button"
+                    value="发布"
+                    @click="createNew"
                 />
-                <select class="title" v-model="category">
-                    <option value="program">编程</option>
-                    <option value="anime">动漫</option>
-                    <option value="game">游戏</option>
-                </select>
             </div>
-
-            <textarea class="content" v-model="content"></textarea>
-
-            <input
-                type="button"
-                class="create-button"
-                value="发布"
-                @click="createNew"
-            />
-        </div>
+        </transition>
     </div>
 </template>
 

@@ -1,16 +1,18 @@
 <template>
     <section class="content">
-        <div class="content-div">
-            <h2 class="content-title">{{ article.title }}</h2>
-            <div class="content-descript">
-                <span>阅读量：{{ article.reading }}</span>
-                <span>作者：{{ article.author }}</span>
-                <span>发布时间：{{ article.releaseDate }}</span>
-                <span>分类：{{ article.category }}</span>
-            </div>
+        <transition appear>
+            <div class="content-div">
+                <h2 class="content-title">{{ article.title }}</h2>
+                <div class="content-descript">
+                    <span>阅读量：{{ article.reading }}</span>
+                    <span>作者：{{ article.author }}</span>
+                    <span>发布时间：{{ article.releaseDate }}</span>
+                    <span>分类：{{ article.category }}</span>
+                </div>
 
-            <div class="content-content" v-html="parsed"></div>
-        </div>
+                <div class="content-content" v-html="parsed"></div>
+            </div>
+        </transition>
     </section>
 </template>
 
@@ -177,7 +179,7 @@ export default {
 /* 超链接样式 */
 .content-hyperlink {
     background-color: rgba(65, 105, 225, 0.3);
-        border-radius: 5px;
+    border-radius: 5px;
     color: #4169e1;
     text-decoration: none;
 }

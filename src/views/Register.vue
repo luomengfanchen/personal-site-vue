@@ -1,29 +1,31 @@
 <template>
     <div class="register-container">
-        <div class="register-card">
-            <h2 class="register-title">欢迎注册</h2>
+        <transition appear>
+            <div class="register-card">
+                <h2 class="register-title">欢迎注册</h2>
 
-            <form>
-                <div class="register-input">
-                    <label for="account">邮箱</label>
-                    <input type="text" v-model="email" />
-                </div>
+                <form>
+                    <div class="register-input">
+                        <label for="account">邮箱</label>
+                        <input type="text" v-model="email" />
+                    </div>
 
-                <div class="register-input">
-                    <label for="nickname">昵称</label>
-                    <input type="text" v-model="nickname" />
-                </div>
+                    <div class="register-input">
+                        <label for="nickname">昵称</label>
+                        <input type="text" v-model="nickname" />
+                    </div>
 
-                <div class="register-input">
-                    <label for="password">密码</label>
-                    <input type="password" v-model="password" />
-                </div>
+                    <div class="register-input">
+                        <label for="password">密码</label>
+                        <input type="password" v-model="password" />
+                    </div>
 
-                <div class="register-button">
-                    <input type="button" value="注册" @click="register" />
-                </div>
-            </form>
-        </div>
+                    <div class="register-button">
+                        <input type="button" value="注册" @click="register" />
+                    </div>
+                </form>
+            </div>
+        </transition>
     </div>
 </template>
 

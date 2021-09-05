@@ -6,53 +6,55 @@
             <div class="manager-title-content">操作</div>
         </div>
 
-        <div
-            class="manager-card"
-            v-for="article in articleList"
-            :key="article.id"
-        >
+        <transition-group appear>
             <div
-                class="manager-content-category manager-content-category-program"
-                v-if="article.category === 'program'"
+                class="manager-card"
+                v-for="article in articleList"
+                :key="article.id"
             >
-                {{ article.category }}
-            </div>
-            <div
-                class="manager-content-category manager-content-category-game"
-                v-else-if="article.category === 'game'"
-            >
-                {{ article.category }}
-            </div>
-            <div
-                class="manager-content-category manager-content-category-anime"
-                v-if="article.category === 'anime'"
-            >
-                {{ article.category }}
-            </div>
+                <div
+                    class="manager-content-category manager-content-category-program"
+                    v-if="article.category === 'program'"
+                >
+                    {{ article.category }}
+                </div>
+                <div
+                    class="manager-content-category manager-content-category-game"
+                    v-else-if="article.category === 'game'"
+                >
+                    {{ article.category }}
+                </div>
+                <div
+                    class="manager-content-category manager-content-category-anime"
+                    v-if="article.category === 'anime'"
+                >
+                    {{ article.category }}
+                </div>
 
-            <div class="manager-content-title">{{ article.title }}</div>
+                <div class="manager-content-title">{{ article.title }}</div>
 
-            <div class="manager-content-operator">
-                <button
-                    class="manager-content-button"
-                    @click="viewArticle(article.id)"
-                >
-                    查看
-                </button>
-                <button
-                    class="manager-content-button "
-                    @click="ModifyArticle(article.id)"
-                >
-                    修改
-                </button>
-                <button
-                    class="manager-content-button"
-                    @click="DeleteArticle(article.id)"
-                >
-                    删除
-                </button>
+                <div class="manager-content-operator">
+                    <button
+                        class="manager-content-button"
+                        @click="viewArticle(article.id)"
+                    >
+                        查看
+                    </button>
+                    <button
+                        class="manager-content-button "
+                        @click="ModifyArticle(article.id)"
+                    >
+                        修改
+                    </button>
+                    <button
+                        class="manager-content-button"
+                        @click="DeleteArticle(article.id)"
+                    >
+                        删除
+                    </button>
+                </div>
             </div>
-        </div>
+        </transition-group>
     </div>
 </template>
 

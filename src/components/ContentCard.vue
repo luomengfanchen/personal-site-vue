@@ -1,30 +1,32 @@
 <template>
     <div class="content">
-        <div
-            class="content-card"
-            v-for="article in articleList"
-            :key="article.id"
-        >
-            <a class="content-link" :href="'/article/' + article.id">
-                <h2 class="content-title">{{ article.title }}</h2>
-            </a>
+        <transition-group appear>
+            <div
+                class="content-card"
+                v-for="article in articleList"
+                :key="article.id"
+            >
+                <a class="content-link" :href="'/article/' + article.id">
+                    <h2 class="content-title">{{ article.title }}</h2>
+                </a>
 
-            <div class="content-descript">
-                <span>阅读量：{{ article.reading }}</span>
-                <span>作者：{{ article.author }}</span>
-                <span>发布时间：{{ article.releaseDate }}</span>
-                <span>分类：{{ article.category }}</span>
+                <div class="content-descript">
+                    <span>阅读量：{{ article.reading }}</span>
+                    <span>作者：{{ article.author }}</span>
+                    <span>发布时间：{{ article.releaseDate }}</span>
+                    <span>分类：{{ article.category }}</span>
+                </div>
+
+                <p class="content-paragraph">{{ article.content }}</p>
             </div>
-
-            <p class="content-paragraph">{{ article.content }}</p>
-        </div>
+        </transition-group>
     </div>
 </template>
 
 <script>
 export default {
     name: 'ContentCard',
-    props: ['articleList']
+    props: ['articleList'],
 }
 </script>
 
