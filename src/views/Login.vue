@@ -41,7 +41,7 @@ export default {
                     password: this.password
                 })
                 .then((response) => {
-                    sessionStorage.setItem('token', response.data.token)
+                    sessionStorage.setItem('token', response.data.data)
                     this.$store.dispatch(
                         'asyncLoginStatus',
                         response.data.token
